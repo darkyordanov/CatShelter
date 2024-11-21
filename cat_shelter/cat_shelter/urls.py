@@ -5,4 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', include('cat_shelter.core.urls')),
+    path('cats/', include('cat_shelter.cats.urls')),
 ]
