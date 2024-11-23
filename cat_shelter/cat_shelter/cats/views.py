@@ -6,13 +6,6 @@ from cat_shelter.cats.models import \
     OurBoy, OurGirl, Kitten
 
 
-'''
-from cat_shelter.cats.views import \
-    our_cats, \
-    kittens, CreateKittensView, our_kittens_details, EditKittensView, DeleteKittensView
-
-'''
-
 def our_cats(request):
     context = {}
     
@@ -35,7 +28,7 @@ def our_boys(request):
   
 class CreateOurBoysView(CreateView):
     model = OurBoy
-    # form_class = OurBoyCreateForm
+    # form_class = OurBoysCreateForm
     template_name = 'catalog/add_our_boys.html'
 
     def get_success_url(self):
@@ -44,7 +37,7 @@ class CreateOurBoysView(CreateView):
         })
 
 
-def our_boys_details(request):
+def our_boy_details(request):
     pass
 
         
@@ -55,9 +48,8 @@ class EditOurBoysView(CreateView):
 class DeleteOurBoysView(CreateView):
     model = OurBoy
     
-
+    
 # Our Girls
-
 def our_girls(request):
     context = {}
     
@@ -67,9 +59,10 @@ def our_girls(request):
         context
     )
     
+    
 class CreateOurGirlsView(CreateView):
     model = OurGirl
-    # form_class = OurBoyCreateForm
+    # form_class = OurGirlsCreateForm
     template_name = 'catalog/add_our_girls.html'
 
     def get_success_url(self):
@@ -78,7 +71,7 @@ class CreateOurGirlsView(CreateView):
         })
 
 
-def our_girls_details(request):
+def our_girl_details(request):
     pass
 
         
@@ -88,16 +81,6 @@ class EditOurGirlsView(CreateView):
         
 class DeleteOurGirlsView(CreateView):
     model = OurGirl
-    
-
-def our_girls(request):
-    context = {}
-    
-    return render(
-        request,
-        'template/our_girls.html',
-        context
-    )
 
 
 # Kitten
@@ -113,7 +96,7 @@ def kittens(request):
     
 class CreateKittensView(CreateView):
     model = Kitten
-    # form_class = OurBoyCreateForm
+    # form_class = KittensCreateForm
     template_name = 'catalog/add_kittens.html'
 
     def get_success_url(self):
@@ -122,7 +105,7 @@ class CreateKittensView(CreateView):
         })
 
 
-def kittens_details(request):
+def kitten_details(request):
     pass
 
         
