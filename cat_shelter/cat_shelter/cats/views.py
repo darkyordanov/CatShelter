@@ -109,9 +109,9 @@ def kitten_details(request):
     pass
 
         
-class EditOurBoysView(CreateView):
+class EditKittensView(CreateView):
     model = Kitten
         
         
-class DeleteOurBoysView(CreateView):
+class DeleteKittensView(CreateView):
     model = Kitten

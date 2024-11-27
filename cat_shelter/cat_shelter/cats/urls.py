@@ -2,9 +2,9 @@ from django.urls import path, include
 
 from cat_shelter.cats.views import \
     our_cats, \
-    our_boys, CreateOurBoysView, our_boys_details, EditOurBoysView, DeleteOurBoysView, \
-    our_girls, CreateOurGirlsView, our_girls_details, EditOurGirlsView, DeleteOurGirlsView, \
-    kittens, CreateKittensView, our_kittens_details, EditKittensView, DeleteKittensView
+    our_boys, CreateOurBoysView, our_boy_details, EditOurBoysView, DeleteOurBoysView, \
+    our_girls, CreateOurGirlsView, our_girl_details, EditOurGirlsView, DeleteOurGirlsView, \
+    kittens, CreateKittensView, kitten_details, EditKittensView, DeleteKittensView
 
 urlpatterns = (
     path('our_cats/', include([
@@ -16,7 +16,7 @@ urlpatterns = (
             path('', our_boys, name='our_boys'),
             path('add_our_boys_cbv/', CreateOurBoysView.as_view(), name='add our boys cbv'),
             path('<int:pk>/', include([
-                path('', our_boys_details, name='our boys details'),
+                path('', our_boy_details, name='our boys details'),
                 path('edit_our_boys/', EditOurBoysView.as_view(), name='edit our boys'),
                 path('delete_our_boys/', DeleteOurBoysView.as_view(), name='delete our boys'),
             ])),
@@ -27,7 +27,7 @@ urlpatterns = (
             path('', our_girls, name='our_girls'),
             path('add_our_girlsv_cbv/', CreateOurGirlsView.as_view(), name='add our girls cbv'),
             path('<int:pk>/', include([
-                path('', our_girls_details, name='our girls details'),
+                path('', our_girl_details, name='our girls details'),
                 path('edit_our_girls/', EditOurGirlsView.as_view(), name='edit our girls'),
                 path('delete_our_girls/', DeleteOurGirlsView.as_view(), name='delete our girls'),
             ])),
@@ -38,7 +38,7 @@ urlpatterns = (
             path('', kittens, name='kittens'),
             path('add_kittens_cbv/', CreateKittensView.as_view(), name='add kittens cbv'),
             path('<int:pk>/', include([
-                path('', our_kittens_details, name='our kittens details'),
+                path('', kitten_details, name='kitten details'),
                 path('edit_kittens/', EditKittensView.as_view(), name='edit our kittens'),
                 path('delete_kittens/', DeleteKittensView.as_view(), name='delete our kittens'),
             ])),

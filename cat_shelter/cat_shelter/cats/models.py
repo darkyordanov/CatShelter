@@ -9,41 +9,47 @@ class Cat(models.Model):
     photo = models.ImageField(
         upload_to='cats/photos/'
     )
-    
+
     name = models.CharField(
         max_length=100,
         blank=True,
         null=True,
     )
-    
+
     registration = models.CharField(
         max_length=100,
         blank=True,
         null=True,
     )
-    
+
     color = models.CharField(
         max_length=100,
         blank=True,
         null=True,
     )
-    
+
     date_of_birth = models.DateField()
-    
+
     blood_type = models.CharField(
         max_length=100,
         blank=True,
         null=True,
     )
-    
+
     research_genetic = models.CharField(
         max_length=100,
         blank=True,
         null=True,
     )
-    
+
     research_blood = models.CharField(
         max_length=100,
+        blank=True,
+        null=True,
+    )
+    
+    available = models.BooleanField(
+        default=True,
         blank=True,
         null=True,
     )
@@ -51,7 +57,7 @@ class Cat(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
-    
+
     modified_at = models.DateTimeField(
         auto_now=True,
     )
