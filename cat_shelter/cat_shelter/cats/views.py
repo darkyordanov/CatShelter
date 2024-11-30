@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import DeleteView, CreateView, UpdateView, ListView
 from django.urls import reverse_lazy
 
+from cat_shelter.cats.forms import OurBoyForm
 from cat_shelter.cats.models import \
     OurBoy, OurGirl, Kitten
 
@@ -28,7 +29,7 @@ def our_boys(request):
   
 class CreateOurBoysView(CreateView):
     model = OurBoy
-    # form_class = OurBoysCreateForm
+    form_class = OurBoyForm
     template_name = 'catalog/add_our_boys.html'
 
     def get_success_url(self):
