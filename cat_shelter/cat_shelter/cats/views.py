@@ -3,23 +3,56 @@ from django.views.generic import \
     DeleteView, CreateView, UpdateView, ListView, DetailView
 from django.urls import reverse_lazy
 
-from cat_shelter.cats.forms import OurBoyForm
 from cat_shelter.cats.models import \
-    OurBoy, OurGirl, Kitten
+    Cat, OurBoy, OurGirl, Kitten
+    
+
+# Our Cats
+class OurCatsListView(ListView):
+    model = Cat
+    template_name = 'cats/our_cats.html'
+    context_object_name = 'our_boys'
 
 
 # Our Boys
 class OurBoyListView(ListView):
     model = OurBoy
-    template_name = 'cat/our_boys.html'
+    template_name = 'cats/our_boys/our_boys.html'
     context_object_name = 'our_boys'
 
 
 class OurBoyDetailView(DetailView):
     model = OurBoy
-    template_name = 'cat/our_boy_detail.html'
+    template_name = 'cats/our_boys/our_boy_detail.html'
     context_object_name = 'our_boy'
 
+
+# Our Girls
+class OurGirlListView(ListView):
+    model = OurGirl
+    template_name = 'cats/our_girls/our_girls.html'
+    context_object_name = 'our_girls'
+
+
+class OurGirlDetailView(DetailView):
+    model = OurGirl
+    template_name = 'cats/our_girls/our_girl_detail.html'
+    context_object_name = 'our_girl'
+
+
+# Kitten
+class KittenListView(ListView):
+    model = Kitten
+    template_name = 'cats/kittens/kittens.html'
+    context_object_name = 'kittens'
+
+
+class KittenDetailView(DetailView):
+    model = Kitten
+    template_name = 'cats/kittens/kitten_detail.html'
+    context_object_name = 'kitten'
+    
+    
 
 # class CreateOurBoyView(CreateView):
 #     model = OurBoy
@@ -44,28 +77,3 @@ class OurBoyDetailView(DetailView):
 #     success_url = reverse_lazy('our_boy_list')
 
     
-# Our Girls
-class OurGirlListView(ListView):
-    model = OurGirl
-    template_name = 'cat/our_girls.html'
-    context_object_name = 'our_girls'
-
-
-class OurGirlDetailView(DetailView):
-    model = OurGirl
-    template_name = 'cat/our_girl_detail.html'
-    context_object_name = 'our_girl'
-
-
-# Kitten
-class KittenListView(ListView):
-    model = OurGirl
-    template_name = 'cat/kittens.html'
-    context_object_name = 'kittens'
-
-
-class OurGirlDetailView(DetailView):
-    model = OurGirl
-    template_name = 'cat/kitten_detail.html'
-    context_object_name = 'kitten'
-
