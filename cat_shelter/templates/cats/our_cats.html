@@ -1,7 +1,42 @@
-<h1> here the users can see our cats categories</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-<h2>1. our boys</h2>
-<h2>2. our girls</h2>
-<h2>3. kittens</h2>
-
-<h3>the users must choose between 1-3</h3>
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1>Our Cats</h1>
+    <div class="row mt-4">
+        <!-- Our Boys -->
+        <div class="col-md-6 col-sm-12 mb-4 d-flex justify-content-center">
+            <div class="card">
+                <img src="{% static 'images/our_boys.jpg' %}" class="card-img-top" alt="Our Boys">
+                <div class="card-body">
+                    <h5 class="card-title">Our Boys</h5>
+                    <a href="{% url 'our_boys' %}" class="btn btn-primary">View Our Boys</a>
+                </div>
+            </div>
+        </div>
+        <!-- Our Girls -->
+        <div class="col-md-6 col-sm-12 mb-4 d-flex justify-content-center">
+            <div class="card">
+                <img src="{% static 'images/our_girls.jpg' %}" class="card-img-top" alt="Our Girls">
+                <div class="card-body">
+                    <h5 class="card-title">Our Girls</h5>
+                    <a href="{% url 'our_girls' %}" class="btn btn-primary">View Our Girls</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Kittens -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-12 mb-4 d-flex justify-content-center">
+            <div class="card">
+                <img src="{% static 'images/kittens.jpg' %}" class="card-img-top" alt="Kittens">
+                <div class="card-body">
+                    <h5 class="card-title">Kittens</h5>
+                    <a href="{% url 'kittens' %}" class="btn btn-primary">View Kittens</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

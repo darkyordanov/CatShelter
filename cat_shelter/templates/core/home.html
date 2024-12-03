@@ -1,10 +1,12 @@
-<h1>WELCOME TO BRITISH SHORTHAIR WORLD</h1>
+{% extends 'base.html' %}
+{% load static %}
 
-<h2>Welcome to DianAvery cattery. We appreciate your interest on our British Shorthair Colourpoint Cats and
-    share your enthusiasm with respect to this fascinating breed in this colour.
-    We are a family owned, cattery located in NE Lincolnshire, UK.
-    All of our cats are GCCF (Governing Council of Cat Fancy) registered, also we are a member in good
-    standing with TICA (The International Cat Association) . Our breeding program, which began in 2021, is
-    focused on producing healthy, happy, cutting edge British Shorthair Colourpoint Cats with excellent type and
-    nature.
-    We fully test our BSH Studs and Queens and we guarantee our kitten's health free from genetic diseases.</h2>
+{% block content %}
+<div class="jumbotron jumbotron-fluid text-white" style="background-image: url('{% static 'images/hero.jpg' %}'); background-size: cover; background-position: center;">
+  <div class="container">
+    <h1 class="display-4">Welcome to Cat Shelter</h1>
+    <p class="lead">Find your new feline friend today.</p>
+    <a href="{% url 'our_cats' %}" class="btn btn-primary btn-lg">View Our Cats</a>
+  </div>
+</div>
+{% endblock %}

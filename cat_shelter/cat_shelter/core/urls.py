@@ -5,7 +5,7 @@ from cat_shelter.core.views import \
 
 urlpatterns = (
     path('', home, name='home'),
-    path('about_us/', about_us, name='about_us'),
+    path('about_us/', about_us, name='about us'),
     path('faq/', faq, name='faq'),
-    path('contact_us/', contact_us, name='contact_us'),
+    path('contact_us/', contact_us, name='contact us'),
 )

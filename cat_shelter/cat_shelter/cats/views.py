@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import \
-    DeleteView, CreateView, UpdateView, ListView, DetailView
+    DeleteView, CreateView, UpdateView, ListView, DetailView, TemplateView
 from django.urls import reverse_lazy
 
 from cat_shelter.cats.models import \
@@ -8,10 +8,9 @@ from cat_shelter.cats.models import \
     
 
 # Our Cats
-class OurCatsListView(ListView):
-    model = Cat
+class OurCatsListView(TemplateView):
     template_name = 'cats/our_cats.html'
-    context_object_name = 'our_boys'
+    # context_object_name = 'our_boys'
 
 
 # Our Boys
